@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,600&display=swap');
+
+.home-container {
+    padding: 70px;
+    color: white;
+    margin: 0 auto;
+}
+
+.home-container.light {
+    color: black;
+}
+
+@media (min-width: 870px) {
+    .home-container {
+        width: 70%;
+    }
+}
+
+@media (min-width: 1100px) {
+    .home-container {
+        width: 60%;
+    }
+}
+
+@media (max-width: 600px) {
+    .home-container {
+        padding: 70px 15px;
+    }
+}
+
+.dict-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.word-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.sound-info {
+    position: relative;
+    background-color: #D744D7;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    color: #fff;
+}
+
+.fa-play {
+    position: absolute;
+    top: 12px;
+    left: 17px;
+}
+
+.basic-info h2 {
+    font-size: 48px;
+    text-transform: capitalize;
+}
+
+.basic-info p {
+    color: #D744D7;
+}
+
+.def-header {
+    display: flex;
+}
+
+.line {
+    border-top: 2px solid #3b3b3b;
+    margin-top: 36px;
+    margin-left: 25px;
+    width: 100%;
+}
+
+.def-header h2 {
+    font-family: 'Lora', sans-serif;
+}
+
+.meaning-details {
+    padding: 30px 0;
+}
+
+.definitions {
+    margin-bottom: 25px;
+}
+
+li.def {
+    list-style: none;
+}
+
+li.def::before {
+    display: inline-block;
+    content: "\2022";
+    color: #D744D7;
+    font-weight: 700;
+    width: 1em;
+    margin-top: 0.3em;
+    margin-left: -1em;
+}
+
+@media (max-width: 450px) {
+    li.def {
+        margin-left: -20px;
+    }
+
+    .example {
+        margin-left: -30px;
+    }
+}
+
+.example li {
+    margin-left: -30px;
+    list-style: none;
+    color: #757575 !important;
+}
+
+.synonym-info {
+    word-wrap: break-word;
+    color: #757575;
+}
+
+.synonym-info h3 {
+    font-size: 21px;
+}
+
+.synonym-info .syno {
+    margin-left: 10px;
+    color: #D744D7;
+    font-size: 15px !important;
+}
+
+.synonym-info a {
+    text-decoration: none;
+}
+
+.syno {
+    cursor: pointer;
+}
+
+.notfound {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.notfound .emoji h2 {
+    font-size: 40px;
+}
