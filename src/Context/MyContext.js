@@ -8,34 +8,6 @@ export const useMyContext = () => {
 
 export const MyProvider = ({ children }) => {
 
-    function getRandomWord(commonWords) {
-        const randomIndex = Math.floor(Math.random() * commonWords.length);
-        return commonWords[randomIndex];
-    }
-
-    const commonWords = [
-        "Abandon",
-        "Beautiful",
-        "Courage",
-        "Definition",
-        "Exaggerate",
-        "Fascinate",
-        "Grace",
-        "Happiness",
-        "Integrity",
-        "Juxtapose",
-        "Knowledge",
-        "Luminous",
-        "Magnificent",
-        "Nostalgia",
-        "Opportunity",
-        "Perseverance",
-        "Quotidian",
-        "Resilience",
-        "Serendipity",
-        "Tenacious"
-    ];
-    
     const [word, setWord] = useState('');
     const [error, setError] = useState(false);
     const [errorMessage, setErrorMessage] = useState({
@@ -88,14 +60,22 @@ export const MyProvider = ({ children }) => {
                     word: result[0].word,
                 });
 
-                console.log(def)
-            } else if (response.status == 404) {
+                setError(false);
+                setErrorMessage({
+                    title: '',
+                    message: '',
+                    resolution: ''
+                })
+
+            } else if (response.status !== 200) {
                 setError(true);
                 setErrorMessage({
                     title: result.title,
                     message: result.message,
                     resolution: result.resolution
                 });
+
+                console.log(errorMessage)
             }
         } catch (error) {
             console.error('An error occurred:', error);

@@ -17,7 +17,23 @@ const Home = (props) => {
 
   const { def, wordSearch, setWord, error, errorMessage } = useMyContext();
 
-  if (def.word) {
+  if (error) {
+    return (
+      <div className={`home-container ${props.color}`}>
+        <div className="notfound">
+          <div className="emoji">
+            <h2>😒</h2>
+          </div>
+          <div className="notfound-title">
+            <h2>{errorMessage.title}</h2>
+          </div>
+          <div className="notfound-cont">
+            <p>{errorMessage.message}</p>
+          </div>
+        </div>
+      </div>
+    );
+  } if (def.word) {
     return (
       <div className={`home-container ${props.color}`}>
         <div className="dict-container">
@@ -76,22 +92,6 @@ const Home = (props) => {
         </div>
       </div>
     );
-  } if (error && errorMessage !== null) {
-    return (
-      <div className={`home-container ${props.color}`}>
-        <div className="notfound">
-          <div className="emoji">
-            <h2>😒</h2>
-          </div>
-          <div className="notfound-title">
-            <h2>{errorMessage.title}</h2>
-          </div>
-          <div className="notfound-cont">
-            <p>{errorMessage.message}</p>
-          </div>
-        </div>
-      </div>
-    );
   } else {
     return (
       <div className={`home-container ${props.color}`}>
@@ -111,4 +111,4 @@ const Home = (props) => {
   }
 }
 
-export default Home
+export default Home;
