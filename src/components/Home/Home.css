@@ -57,8 +57,38 @@
 }
 
 .basic-info h2 {
+    max-width: 460px;
+    overflow-wrap: break-word;
     font-size: 48px;
     text-transform: capitalize;
+}
+
+@media (min-width: 1500px) {
+    .basic-info h2 {
+        max-width: 660px;
+    }
+}
+
+@media (max-width: 770px) {
+    .basic-info h2 {
+        max-width: 280px;
+    }
+}
+
+@media (max-width: 490px) {
+    .basic-info h2 {
+        max-width: 260px;
+    }
+}
+
+@media (max-width: 350px) {
+    .word-details {
+        flex-direction: column;
+    }
+
+    .basic-info {
+        max-width: calc(100%);
+    }
 }
 
 .basic-info p {
